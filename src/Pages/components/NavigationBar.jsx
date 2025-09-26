@@ -6,7 +6,6 @@ import {
   User,
   Code,
   Github,
-  Linkedin,
 } from "lucide-react";
 
 export const NavigationBar = () => {
@@ -23,6 +22,7 @@ export const NavigationBar = () => {
       >
         <Home size={25} />
       </DockIcon>
+
       <DockIcon
         href="#about"
         title="About"
@@ -34,6 +34,7 @@ export const NavigationBar = () => {
       >
         <User size={25} />
       </DockIcon>
+
       <DockIcon
         href="#services"
         title="Services"
@@ -45,6 +46,7 @@ export const NavigationBar = () => {
       >
         <Code size={25} />
       </DockIcon>
+
       <DockIcon
         href="#projects"
         title="Projects"
@@ -56,6 +58,7 @@ export const NavigationBar = () => {
       >
         <Briefcase size={25} />
       </DockIcon>
+
       <DockIcon
         href="#contact"
         title="Contact"
@@ -68,25 +71,29 @@ export const NavigationBar = () => {
         <Mail size={25} />
       </DockIcon>
 
+      {/* GitHub */}
       <DockIcon
-        href="https://github.com"
+        href="https://github.com/Ammarsaqib-programmer"
         target="_blank"
         title="GitHub Profile"
         onClick={(e) => {
-          window.open("https://github.com/Umar-ejaz15", "_blank");
+          e.preventDefault();
+          window.open("https://github.com/Ammarsaqib-programmer", "_blank");
         }}
       >
         <Github size={25} />
       </DockIcon>
+
+      {/* Email */}
       <DockIcon
-        href="https://linkedin.com"
-        target="_blank"
-        title="LinkedIn Profile"
+        href="mailto:ammarsaqib15june@gmail.com"
+        title="Email"
         onClick={(e) => {
-          window.open("https://www.linkedin.com/in/umar-ejaz-6734402b1/", "_blank");
+          e.preventDefault();
+          window.location.href = "mailto:ammarsaqib15june@gmail.com";
         }}
       >
-        <Linkedin size={25} />
+        <Mail size={25} />
       </DockIcon>
     </Dock>
   );

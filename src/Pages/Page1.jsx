@@ -19,7 +19,6 @@ const Page1 = () => {
     <>
       
       <div className="bg-black text-white min-h-screen  overflow-hidden">
-        {/* <Analytics /> */}
         <NavigationBar />
         <Hero />
         <About />
@@ -27,9 +26,6 @@ const Page1 = () => {
         <Skills />
         <WhyMe />
         <Projects />
-        {/* <Reviews /> */}
-        {/* <CTA /> */}
-        {/* <Contact /> */}
         <Contact />
       </div>
     </>

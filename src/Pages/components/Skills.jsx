@@ -5,117 +5,115 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
 import { ShineBorder } from "@/components/magicui/shine-border";
 
+// Import Lucide icons
+import {
+  Database,
+  Cloud,
+  Github,
+  Docker,
+  BarChart3,
+  GitBranch,
+  Terminal,
+  Brain,
+  ChartBar,
+  LineChart,
+  Cpu,
+  CloudCog,
+} from "lucide-react";
+
 const Skills = () => {
   const tools = [
-    { icon: "🐍", name: "Python" },
-    { icon: "🛢️", name: "MySQL" },
-    { icon: "🍃", name: "MongoDB" },
-    { icon: "📊", name: "pandas" },
-    { icon: "🧠", name: "scikit-learn" },
-    { icon: "🔶", name: "TensorFlow" },
-    { icon: "📈", name: "Power BI" },
-    { icon: "📊", name: "Tableau" },
-    { icon: "📉", name: "Seaborn" },
-    { icon: "📊", name: "Plotly" },
-    { icon: "☁️", name: "Google Cloud" },
-    { icon: "🪣", name: "AWS" },
-    { icon: "🐳", name: "Docker" },
-    { icon: "🔧", name: "Git" },
-    { icon: "📱", name: "Streamlit" },
-    { icon: "📊", name: "Dash" },
-    { icon: "🌐", name: "Flask APIs" },
+    { icon: <Terminal className="w-8 h-8 text-blue-400" />, name: "Python" },
+    { icon: <Database className="w-8 h-8 text-yellow-400" />, name: "MySQL" },
+    { icon: <Database className="w-8 h-8 text-green-500" />, name: "MongoDB" },
+    { icon: <BarChart3 className="w-8 h-8 text-purple-400" />, name: "Pandas" },
+    { icon: <Brain className="w-8 h-8 text-pink-400" />, name: "Scikit-learn" },
+    { icon: <Cpu className="w-8 h-8 text-orange-400" />, name: "TensorFlow" },
+    { icon: <ChartBar className="w-8 h-8 text-yellow-400" />, name: "Power BI" },
+    { icon: <LineChart className="w-8 h-8 text-indigo-400" />, name: "Tableau" },
+    { icon: <BarChart3 className="w-8 h-8 text-cyan-400" />, name: "Seaborn" },
+    { icon: <LineChart className="w-8 h-8 text-teal-400" />, name: "Plotly" },
+    { icon: <CloudCog className="w-8 h-8 text-blue-500" />, name: "Google Cloud" },
+    { icon: <Cloud className="w-8 h-8 text-orange-500" />, name: "AWS" },
+    { icon: <Docker className="w-8 h-8 text-sky-500" />, name: "Docker" },
+    { icon: <GitBranch className="w-8 h-8 text-red-500" />, name: "Git" },
+    { icon: <Cpu className="w-8 h-8 text-pink-400" />, name: "Streamlit" },
+    { icon: <ChartBar className="w-8 h-8 text-green-400" />, name: "Dash" },
+    { icon: <Cloud className="w-8 h-8 text-gray-300" />, name: "Flask APIs" },
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 },
+      transition: { staggerChildren: 0.08 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.8 },
+    hidden: { opacity: 0, y: 15, scale: 0.9 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { type: "spring", stiffness: 100, damping: 10 },
+      transition: { type: "spring", stiffness: 120, damping: 12 },
     },
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-zinc-900 to-black py-16 sm:py-24">
+    <div className="relative min-h-screen bg-gradient-to-b from-zinc-900 to-black py-12 sm:py-16">
       <div className="absolute inset-0 w-full h-full z-0 opacity-30">
-        <Particles className="w-full h-full" quantity={150} />
+        <Particles className="w-full h-full" quantity={120} />
       </div>
+
       <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, type: "spring" }}
-          className="mx-auto max-w-3xl text-center space-y-8"
+          transition={{ duration: 0.8, type: "spring" }}
+          className="mx-auto max-w-2xl text-center space-y-6"
         >
           <AnimatedGradientText>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">
-              🧰 Tools & Technologies I Work With
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+              🧰 Tools & Technologies
             </h1>
           </AnimatedGradientText>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="space-y-6"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-              Languages, Tools & Platforms
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              I build robust, data-driven solutions with precision. From backend
-              APIs to cloud-based dashboards, I leverage the right tools to solve
-              real-world problems and bring ideas to life.
-            </p>
-          </motion.div>
+          <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto leading-relaxed">
+            I build robust, data-driven solutions with modern tools and platforms.
+          </p>
         </motion.div>
 
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          className="mt-16 grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+          className="mt-10 grid grid-cols-2 gap-4 sm:gap-5 sm:grid-cols-3 lg:grid-cols-5"
         >
           <AnimatePresence>
             {tools.map((item, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.07 }}
                 className="group"
               >
                 <div className="relative">
-                  <MagicCard className="relative h-full overflow-hidden rounded-xl bg-gradient-to-b from-zinc-800/50 to-zinc-900/50 p-4 backdrop-blur-sm transition-all duration-300 hover:from-zinc-700/50 hover:to-zinc-800/50">
+                  <MagicCard className="relative h-full overflow-hidden rounded-lg bg-gradient-to-b from-zinc-800/50 to-zinc-900/50 p-3 backdrop-blur-sm hover:from-zinc-700/50 hover:to-zinc-800/50 transition-all duration-300">
                     <motion.div
-                      className="flex items-center justify-center p-4 text-4xl sm:text-5xl"
+                      className="flex items-center justify-center p-3"
                       whileHover={{
                         rotate: 360,
-                        scale: 1.2,
-                        transition: { duration: 0.6, ease: "easeInOut" },
+                        scale: 1.15,
+                        transition: { duration: 0.5, ease: "easeInOut" },
                       }}
                     >
                       {item.icon}
                     </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-4 text-center"
-                    >
-                      <p className="text-sm sm:text-base font-semibold text-gray-200 group-hover:text-white transition-colors">
-                        {item.name}
-                      </p>
-                    </motion.div>
+                    <p className="mt-2 text-xs sm:text-sm font-semibold text-gray-200 text-center group-hover:text-white transition-colors">
+                      {item.name}
+                    </p>
                   </MagicCard>
-                  <ShineBorder className="absolute inset-0 rounded-xl" />
+                  <ShineBorder className="absolute inset-0 rounded-lg" />
                 </div>
               </motion.div>
             ))}
